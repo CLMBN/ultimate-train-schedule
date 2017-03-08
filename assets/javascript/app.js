@@ -11,17 +11,28 @@ var config = {
 
     var dataRef = firebase.database();
 
+// Initial Values
+
+    var trainName = "";
+    var destination = "";
+    var trainTime = "";
+    var frequency = 0;
+    var user;
 //authentication
     var provider = new firebase.auth.GoogleAuthProvider();
   
+    $(document).ready(function() {
+        $("#addTrain").hide();
+    })
+
     function signIn() {
       console.log("clicked button")
       firebase.auth().signInWithPopup(provider).then(function(result) {
   // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
         // The signed-in user info.
-        var user = result.user;
-        console.log(user.displayName);
+        user = result.user;
+        showAddTrain();
         // ...
       }).catch(function(error) {
         // Handle Errors here.
@@ -35,13 +46,11 @@ var config = {
       });
     }
 
+    function showAddTrain() {
+      $("#logIn").hide();
+      $("#addTrain").show();
+    }
 
-// Initial Values
-
-    var trainName = "";
-    var destination = "";
-    var trainTime = "";
-    var frequency = 0;
 
 //Capture Button Click
 
