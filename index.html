@@ -13,8 +13,10 @@
 <!--   <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase-database.js"></script>
 
 </head>
 <body>
@@ -24,8 +26,8 @@
     <p></p> 
   </div>
 
-  <!-- Results Panel -->
-  <div class="row">
+  Results Panel
+  <div class="row" id="nextTrain">
     <div class="col-lg-12">
 
       <div class="panel panel-default">
@@ -35,6 +37,7 @@
           <h3 class="panel-title">Next Train Schedule</h3>
 
         </div>
+
 
 
         <div class="table-responsive">
@@ -57,9 +60,18 @@
     </div>
   </div>
 
+  <!-- Login Panel -->
+  <div class="panel panel-primary" id="logIn">
+    <div class="panel-heading">
+      <span class="glyphicon glyphicon-log-in"></span> Sign in to add a new train schedule
+      <button type="button" class="btn btn-primary" onclick="signIn();"><i class="fa fa-google-plus"></i> Sign In with Google </button>
+      <!-- <button type="button" class="btn btn-primary" onclick="signIn();"><i class="fa fa-github"></i> Sign In with GitHub </button> -->
+    </div>
+  </div>
+
   <!-- Search Panel -->
 
-  <div class="panel panel-primary">
+  <div class="panel panel-primary hide" id="addTrain">
     <div class="panel-heading">
       <span class="glyphicon glyphicon-search"></span> Add Train
     </div>
