@@ -51,6 +51,14 @@ var config = {
       $("#addTrain").show();
     }
 
+    function signOut() {
+      firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+      }, function(error) {
+  // An error happened.
+    });
+    }
+
 
 //Capture Button Click
 
