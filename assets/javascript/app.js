@@ -51,6 +51,11 @@ var config = {
       $("#addTrain").show();
     }
 
+    function showLogin() {
+      $("#logIn").show();
+      $("#addTrain").hide();
+    }
+
     function signOut() {
       firebase.auth().signOut().then(function() {
   // Sign-out successful.
