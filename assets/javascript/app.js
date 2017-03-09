@@ -72,7 +72,7 @@ var config = {
     	frequency = $("#frequency").val().trim();
     	
 //calculate first Time pushed back 1 year
-    	convertedTime = moment(trainTime, "HH:mm").subtract(1, "years");
+    	convertedTime = moment(trainTime, "HH:mm a").subtract(1, "years");
     	console.log(convertedTime);
 
     	var currentTime = moment();
@@ -91,8 +91,8 @@ var config = {
     	console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
 // Next Train
-    	var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("h:mm a");
-    	console.log("ARRIVAL TIME: " + moment(nextTrain).format("h:mm a"));
+    	var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("hh:mm a");
+    	console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm a"));
 
 
 //Code for the push
