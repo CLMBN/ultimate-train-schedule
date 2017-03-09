@@ -91,8 +91,8 @@ var config = {
     	console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
 // Next Train
-    	var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("hh.mm a");
-    	console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm a"));
+    	var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("h.mm a");
+    	console.log("ARRIVAL TIME: " + moment(nextTrain).format("h:mm a"));
 
 
 //Code for the push
